@@ -1,3 +1,12 @@
+# 启动项目
+- 务必选择nodejs16 LTS版本
+- 执行`npm install`
+- 检查是否安装了ng，如果没有`npm install -g @angular/cli `
+- 然后国际惯例`npm start`（如果你要在局域网启动开发服 `npm start -- --host 0.0.0.0` 这样所有人可以访问，否则只有localhost的可以访问）
+- 解决后端问题，然后对接
+
+
+
 # E5Html
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
