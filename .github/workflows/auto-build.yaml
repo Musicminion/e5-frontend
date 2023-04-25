@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-
+      - dev
 env:
   NODE_VERSION: 16.19.1
   DOCKER_REGISTRY: docker.io
