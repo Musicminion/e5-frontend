@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         platform: [ubuntu-latest]
-        arch: [amd64, arm64, armv7]
+        arch: [x86_64, arm64, armv7]
         # platform:
         #   - name: linux/amd64
         #     label: linux-amd64
