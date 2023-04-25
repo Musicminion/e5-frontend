@@ -8,7 +8,7 @@ on:
 env:
   NODE_VERSION: 16.19.1
   DOCKER_REGISTRY: docker.io
-  IMAGE_NAME: Musicminion/e5-frontend
+  IMAGE_NAME: musicminion/e5-frontend
   IMAGE_TAG: latest
 
 jobs:
