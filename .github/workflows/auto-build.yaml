@@ -14,10 +14,10 @@ env:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        platform: [ubuntu-latest]
-        arch: [x86_64, arm64]
+    # strategy:
+      # matrix:
+        # platform: [ubuntu-latest]
+        # arch: [x86_64, arm64]
         # platform:
         #   - name: linux/amd64
         #     label: linux-amd64
@@ -50,4 +50,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-${{ matrix.arch }}
-          platforms: linux/${{ matrix.arch }}
+          # platforms: linux/${{ matrix.arch }}
+          platforms: linux/amd64,linux/arm64
