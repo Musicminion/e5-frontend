@@ -3,7 +3,7 @@ name: Build e5-html Image
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   NODE_VERSION: 16.19.1
