@@ -16,13 +16,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        platform:
-          - name: linux/amd64
-            label: linux-amd64
-          - name: linux/arm64
-            label: linux-arm64
-          - name: linux/arm/v7
-            label: linux-armv7
+        platform: [ubuntu-latest]
+        arch: [amd64, arm64, armv7]
+        # platform:
+        #   - name: linux/amd64
+        #     label: linux-amd64
+        #   - name: linux/arm64
+        #     label: linux-arm64
+        #   - name: linux/arm/v7
+        #     label: linux-armv7
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -47,5 +49,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-${{ matrix.platform.label }}
+          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-${{ matrix.arch }}
           platforms: ${{ matrix.platform.name }}
