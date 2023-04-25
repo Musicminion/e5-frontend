@@ -2,11 +2,13 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+let proxyUrl = window.location.protocol;
+let hostname = window.location.hostname;
+
 export const environment = {
-    production: false,
-    // apiUrl: 'http://127.0.0.1:8081'
-    // 从环境变量里面读取apiUrl,读取不到就用默认值127.0.0.1
-    apiUrl: process.env.API_URL || 'http://127.0.0.1:8081'
+    production: true,
+    // apiUrl: 'http://localhost:8080'
+    apiUrl: proxyUrl + '//' + hostname + ':8080'
 };
 
 /*
