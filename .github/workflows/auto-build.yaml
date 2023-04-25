@@ -40,7 +40,6 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          builder: ${{ env.DOCKER_REGISTRY }}/buildx-builde
           push: true
           tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-${{ matrix.platform }}
           platforms: ${{ matrix.platform }}
