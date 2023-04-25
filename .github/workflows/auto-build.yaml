@@ -50,4 +50,3 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-${{ matrix.arch }}
-          platforms: ${{ matrix.arch }}
