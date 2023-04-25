@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         platform: [ubuntu-latest]
-        arch: [x86_64, arm64, armv7]
+        arch: [x86_64, arm64]
         # platform:
         #   - name: linux/amd64
         #     label: linux-amd64
@@ -50,3 +50,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-${{ matrix.arch }}
+          platforms: linux/${{ matrix.arch }}
