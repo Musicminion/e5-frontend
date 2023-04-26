@@ -13,7 +13,7 @@ env:
 
 jobs:
   build-and-push:
-    # runs-on: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         runs-on: [ubuntu-latest, macos-latest, windows-latest]
