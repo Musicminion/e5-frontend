@@ -9,27 +9,33 @@
                 <li>请单独创建一个同域 E5 子账号进行授权，不要使用此账号进行发送、接收个人邮件，以免发生误会</li>
             </ol>
             <h2 nz-typography>
+                特别感谢与打包说明
+            </h2>
+            <ol nz-typography>
+                <li>向原项目的作者表示特别感谢！@qyi.io</li>
+                <li>请勿用作任何的商业用途，感谢！</li>
+                <li>
+                    打包过程中，ChatGPT完成了很大一部分的代码编写，感谢！
+                </li>
+            </ol>
+            <h2 nz-typography>
                 用到技术或框架
             </h2>
             <div nz-typography>
                 <h3 nz-typography>spring boot</h3>
-                <h3 nz-typography>rabbitMq</h3>
-                <span>
-                    <code>需要安装rabbitmq_delayed_message_exchange插件
-                同时新建一个用户来对接此程序，由于</code>
-                </span>
+                <span>java-17环境，需要配置好数据库的用户名、密码</span>
                 <h3 nz-typography>Redis</h3>
                 <span>默认用1库，可自行在配置文件修改</span>
-                <h3 nz-typography>Mysql5.7</h3>
-                <span>自行导入sql
-                没有写清空日志功能，后面加上。
-                按道理说日志因该存到MongoDB里，所以？</span>
+                <h3 nz-typography>Mysql8.0</h3>
+                <span>
+                    docker会自动的导入sql，默认的密码在环境变量里面，如果需要修改，请记得把后端和数据库
+                    的环境变量相关的都修改了，否则会导致数据库连接失败。
+                </span>
                 <h3 nz-typography>Mybatis Plus</h3>
                 <h3 nz-typography>Spring Security</h3>
                 <span>权限配置由于就那么几个，所以就没写到mysql里面。</span>
                 <h3 nz-typography>log4j2</h3>
                 <span>日志框架</span>
-
                 <h3 nz-typography>Anguale</h3>
                 <p>前端框架</p>
             </div>
