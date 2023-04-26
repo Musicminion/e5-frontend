@@ -14,7 +14,7 @@ env:
 jobs:
   build-amd64:
     runs-on: ubuntu-latest
-    name: Build on ${{ matrix.platform }} Docker image
+    name: Build on amd64 Docker image
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -39,22 +39,8 @@ jobs:
 
   build-arm64:
     runs-on: ubuntu-latest
-    name: Build on ${{ matrix.platform }} Docker image
-    strategy:
-      matrix:
-        - arch: arm64
-          platform: linux/arm64
-          distro: ubuntu_latest
-    #     platform: [ linux/amd64, linux/arm64 ]
-        # arch: [ amd64, arm64 ]
-        # platform:
-        #   - name: linux/amd64
-        #     label: linux-amd64
-        #   - name: linux/arm64
-        #     label: linux-arm64
-        #   - name: linux/arm/v7
-        #     label: linux-armv7
-    
+    name: Build on arm64 Docker image
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -62,7 +48,7 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
         with:
-          platforms: ${{ matrix.platform }}
+          platforms: arm64
   
       - name: test arch
         run: uname -m
@@ -84,8 +70,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-${{ matrix.arch }}
-          platforms: ${{ matrix.platform }}
+          tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}-arm64
+          platforms: linux/arm64
           # platforms: linux/${{ matrix.arch }}
           # platforms: linux/${{ matrix.arch }}
           # platforms: linux/amd64,linux/arm64
