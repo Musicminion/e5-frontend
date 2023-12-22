@@ -1,4 +1,4 @@
-name: Build e5-html Image
+name: Build e5-html Image(Arm)
 
 on:
   workflow_dispatch:
