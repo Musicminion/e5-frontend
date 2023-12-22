@@ -6,7 +6,7 @@ env:
   NODE_VERSION: 16.19.1
   DOCKER_REGISTRY: ghcr.io
   IMAGE_NAME: musicminion/e5-frontend
-  IMAGE_TAG: latest
+  IMAGE_TAG: arm-test
 
 jobs:
   build-images:
